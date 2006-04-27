@@ -1,0 +1,11 @@
+19d108b5c9532d9f45c9f2c060139055 *DESCRIPTION
+9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
+995c5846e3ffa772c2f1e50990514846 *R/new.survivalROC.R
+20cbc03e29f6ca280509ea82b32af3af *R/survivalROC.R
+bcfbf86350abb8625a07490a08e5e332 *R/zzz.R
+1db2e3f17e2c8647d67c4a2eed7ee2ad *data/mayo.RData
+ea07430ffaf251aa1ce5a3f2fe161dfd *data/mayo.txt
+ec9a0b5e294d7e0f733dd1bffe50df46 *man/mayo.rd
+e83f692e722a13eb2d4f2216188b7012 *man/survivalROC.C.Rd
+9bcf6aa111d07b7528bcf23dbca10dc5 *man/survivalROC.Rd
+7e4bbf1d86c2e30e816029bfcc83fa88 *src/survivalROC.c
