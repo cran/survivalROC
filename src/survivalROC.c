@@ -84,7 +84,7 @@ void  survivalROC( S_time, S_status, S_ObsTimes,
       for( k=0; k<n; k++ ){
 	if( SurvivalTime[k] >= tj ){
 	  den += 1.0;
-	  if( SurvivalTime[k]==tj && Status[k]==1.0 ) num += 1.0;
+	  if( SurvivalTime[k]==tj & Status[k]==1.0 ) num += 1.0;
 	}
       }
     }
@@ -123,8 +123,8 @@ void  survivalROC( S_time, S_status, S_ObsTimes,
     FirstIndex = n-1;    
     LastIndex = n-1;    
     for( j=0; j<(n-1); j++ ){
-      if( X[j] < UniqueValues[i] && X[j+1] >= UniqueValues[i] ) FirstIndex=j;
-      if( X[j] <= UniqueValues[i] && X[j+1] > UniqueValues[i] ) LastIndex=j;
+      if( X[j] < UniqueValues[i] & X[j+1] >= UniqueValues[i] ) FirstIndex=j;
+      if( X[j] <= UniqueValues[i] & X[j+1] > UniqueValues[i] ) LastIndex=j;
     }
     TargetIndex = floor( ( (double)FirstIndex + 
                            (double)LastIndex )/2.0 + 0.5 );
@@ -151,7 +151,7 @@ void  survivalROC( S_time, S_status, S_ObsTimes,
 	for( k=0; k<=(index1-index0); k++ ){
 	  if( SurvivalTime[index0+k] >= tj ){
 	    den += 1.0;
-	    if( SurvivalTime[index0+k]==tj && Status[index0+k] == 1.0 ) num += 1.0;
+	    if( SurvivalTime[index0+k]==tj & Status[index0+k] == 1.0 ) num += 1.0;
 	  }
 	}
       }

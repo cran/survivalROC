@@ -6,12 +6,12 @@
   data using the Nearest Neighbor Estimation (NNE) method of Heagerty,
   Lumley and Pepe, 2000}
 \usage{
-survivalROC.C(Stime, status, marker, predict.time, span)
+survivalROC.C(Stime,status,x,predict.time,span)
 }
 \arguments{
   \item{Stime}{Event time or censoring time for subjects}
   \item{status}{Indicator of status, 1 if death or event, 0 otherwise }
-  \item{marker}{Predictor or marker value}
+  \item{x}{Predictor or marker value}
   \item{predict.time}{Time point of the ROC curve}
   \item{span}{Span for the NNE}  
 }
@@ -49,7 +49,7 @@ cutoff <- 365
 Staltscore4 <- NULL
 Mayo.fit4 <- survivalROC.C( Stime = mayo$time,  
       status = mayo$censor,      
-      marker = mayo$mayoscore4,     
+      x = mayo$mayoscore4,     
       predict.time = cutoff,      
       span = 0.25*nobs^(-0.20))
 Staltscore4 <- Mayo.fit4$Survival

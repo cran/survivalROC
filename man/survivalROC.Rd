@@ -6,14 +6,14 @@
   data using the Kaplan-Meier (KM) or Nearest Neighbor Estimation (NNE)
   method of Heagerty, Lumley and Pepe, 2000}
 \usage{
-survivalROC(Stime, status, marker, entry = NULL, predict.time, cut.values =
+survivalROC(Stime, status, x, entry = NULL, predict.time, cut.values =
 NULL, method = "NNE", lambda = NULL, span = NULL, window =
 "symmetric")
 }
 \arguments{
   \item{Stime}{Event time or censoring time for subjects}
   \item{status}{Indicator of status, 1 if death or event, 0 otherwise }
-  \item{marker}{Predictor or marker value}
+  \item{x}{Predictor or marker value}
   \item{entry}{Entry time for the subjects}
   \item{predict.time}{Time point of the ROC curve}
   \item{cut.values}{marker values to use as a cut-off for
@@ -54,7 +54,7 @@ cutoff <- 365
   ## MAYOSCORE 4, METHOD = NNE
   Mayo4.1= survivalROC(Stime=mayo$time,  
     status=mayo$censor,      
-    marker = mayo$mayoscore4,     
+    x = mayo$mayoscore4,     
     predict.time = cutoff,span = 0.25*nobs^(-0.20) )
   plot(Mayo4.1$FP, Mayo4.1$TP, type="l", xlim=c(0,1), ylim=c(0,1),   
   xlab=paste( "FP", "\n", "AUC = ",round(Mayo4.1$AUC,3)), 
@@ -64,7 +64,7 @@ cutoff <- 365
   ## MAYOSCORE 4, METHOD = KM
   Mayo4.2= survivalROC(Stime=mayo$time,  
     status=mayo$censor,      
-    marker = mayo$mayoscore4,     
+    x = mayo$mayoscore4,     
     predict.time =  cutoff, method="KM")
   plot(Mayo4.2$FP, Mayo4.2$TP, type="l", xlim=c(0,1), ylim=c(0,1),   
   xlab=paste( "FP", "\n", "AUC = ",round(Mayo4.2$AUC,3)), 
