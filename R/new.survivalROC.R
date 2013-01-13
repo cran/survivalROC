@@ -1,5 +1,5 @@
 "survivalROC" <-
-function (times, status, x, entry = NULL, predict.time, cut.values = NULL, 
+function (times, status, marker, entry = NULL, predict.time, cut.values = NULL, 
     method = "smooth", lambda = NULL, span = NULL, window = "symmetric") 
 {
     if (is.null(entry)) 
@@ -8,6 +8,7 @@ function (times, status, x, entry = NULL, predict.time, cut.values = NULL,
     entry <- entry[!bad]
     times <- times[!bad]
     status <- status[!bad]
+    x <- marker
     x <- x[!bad]
     if (sum(bad) > 0) 
         cat(paste("\n", sum(bad), "records with missing values dropped. \n"))

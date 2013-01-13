@@ -10,7 +10,7 @@
 ## DATE: 06/04/19
 ## Function name changed from roc.KM.calc() to survivalROC() as of 06/05/17
 ##---------------------------------------------------------------------------
-survivalROC<-function( Stime, status, x, entry=NULL,
+survivalROC<-function( Stime, status, marker, entry=NULL,
 			predict.time, cut.values=NULL,
 			method="NNE", lambda=NULL, span=NULL,
 			window="symmetric" )
@@ -28,6 +28,7 @@ survivalROC<-function( Stime, status, x, entry=NULL,
   times=Stime
   ## changed input from times to Stime, June 1, 2006, by Paramita Saha
   ## to make both the functions similar
+x <- marker
 
 if( is.null(entry) ) entry <- rep( 0, length(times) )
 ##
@@ -235,7 +236,7 @@ list(cut.values=c(-Inf, cut.values),
 survivalROC.C <- function( 
                                 Stime,
                                 status,
-                                x,
+                                marker,
                                 predict.time,
                                 span = 0.05 ){
 
@@ -256,6 +257,7 @@ survivalROC.C <- function(
   PredictTime=predict.time
   ## changed input from PredictTime to predict.time, June 1, 2006, by Paramita Saha
   ## to make both the functions similar
+  x <- marker 
 drop <- is.na(Stime) | is.na(status) | is.na(x )
 ## checking how many have missing Stime or status or missing marker values
 ## we are excluding those who have missing at least one of the above
@@ -266,7 +268,7 @@ if( sum(drop)>0 ){
   ## dropping the missing values and updating Stime, status and x to
   ## corrspond to those without any missing values
   Stime <- Stime[ !drop ]
-  status <- status[ !drop ]
+  status <- status[ !drop ] 
   x <- x[ !drop ]
 }
 #
