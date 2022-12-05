@@ -13,15 +13,11 @@
 
 /* ---------------------------------------------------------------------- */
 
-void  survivalROC( S_time, S_status, S_ObsTimes, 
-                   S_x, S_UniqueValues,
-                   S_PredictTime, S_SurvT, S_span, 
-                   S_TP, S_FP,
-                   S_n, S_p, S_q )
-
-  double *S_time, *S_status, *S_x, *S_UniqueValues, *S_PredictTime;
-  double *S_ObsTimes, *S_SurvT, *S_span, *S_TP, *S_FP;
-  int    *S_n, *S_p, *S_q;
+void  survivalROC( double *S_time, double *S_status, double *S_ObsTimes, 
+                   double *S_x, double *S_UniqueValues,
+                   double *S_PredictTime, double *S_SurvT, double *S_span, 
+                   double *S_TP, double *S_FP,
+                   int *S_n, int *S_p, int *S_q )
 {
   double *X, *UniqueValues, *SurvivalTime, *Status, PredictTime, span;
   double *ObsTimes, St, *SgivenX, *pX, *cdfX, STX, alt_St;

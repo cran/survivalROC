@@ -1,17 +1,18 @@
 Package: survivalROC
-Version: 1.0.3
+Version: 1.0.3.1
 Date: 2013-01-13
-Title: Time-dependent ROC curve estimation from censored survival data
+Title: Time-Dependent ROC Curve Estimation from Censored Survival Data
 Author: Patrick J. Heagerty <heagerty@u.washington.edu>, packaging by
         Paramita Saha-Chaudhuri <paramita.sahachaudhuri.work@gmail.com>
 Maintainer: Paramita Saha-Chaudhuri
-        <paramita.sahachaudhuri.work@gmail.com>
+ <paramita.sahachaudhuri.work@gmail.com>
 Depends: R (>= 1.6.1)
 Description: Compute time-dependent ROC curve from censored survival
         data using Kaplan-Meier (KM) or Nearest Neighbor Estimation
         (NNE) method of Heagerty, Lumley & Pepe (Biometrics, Vol 56 No
-        2, 2000, PP 337-344)
+        2, 2000, PP 337-344).
 License: GPL (>= 2)
-Packaged: 2013-01-13 17:11:23 UTC; psaha
+Packaged: 2022-12-05 15:15:50 UTC; hornik
 Repository: CRAN
-Date/Publication: 2013-01-13 19:38:55
+Date/Publication: 2022-12-05 15:33:48 UTC
+NeedsCompilation: yes
